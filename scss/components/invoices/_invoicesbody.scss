@@ -1,0 +1,47 @@
+.invoices {
+	display: flex;
+	flex-direction: column;
+	gap: 1em;
+}
+
+.invoice {
+	font-size: 0.75rem;
+	background: var(--clr-invoice-item-bg);
+	padding: 1rem;
+	border-radius: 0.5em;
+	display: flex;
+	align-items: center;
+	gap: 2em;
+	cursor: pointer;
+	border: 1px solid transparent;
+	transition: border 170ms ease-in-out;
+
+	&:hover {
+		border-color: var(--clr-body-main);
+	}
+
+	&__id {
+		font-weight: var(--fw-bold);
+		color: var(--clr-invoice-price-text);
+
+		span {
+			color: var(--clr-invoice-id-hash);
+		}
+	}
+
+	&__date {
+		color: var(--clr-invoice-status-text);
+		// font-weight: var(--fw-bold);
+	}
+
+	&__name {
+		color: var(--clr-invoice-status-text);
+	}
+
+	&__price {
+		color: var(--clr-invoice-price-text);
+		font-size: 1rem;
+		font-weight: var(--fw-bold);
+		margin-left: auto;
+	}
+}

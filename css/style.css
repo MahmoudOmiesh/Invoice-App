@@ -1,0 +1,643 @@
+:root[data-theme=dark] {
+  --clr-body-bg: #141625;
+  --clr-body-sidebar: #1e2139;
+  --clr-body-main: #7c5dfa;
+  --clr-body-icon: url(../../../assets/icon-sun.svg);
+  --clr-form-bg: #141625;
+  --clr-form-fieldBg: #1e2139;
+  --clr-form-fieldBorder: #252945;
+  --clr-btn-one-bg: #252945;
+  --clr-btn-one-text: #dfe3fa;
+  --clr-btn-one-hover: #ffffff;
+  --clr-btn-two-bg: #ec5757;
+  --clr-btn-two-text: #ffffff;
+  --clr-btn-two-hover: #ff9797;
+  --clr-invoice-item-bg: #1e2139;
+  --clr-invoice-status-bg: #dfe3fa0f;
+  --clr-invoice-status-text: #dfe3fa;
+  --clr-invoice-price-text: #ffffff;
+  --clr-invoice-id-hash: #7e88c3;
+  --clr-invoice-table-bg: #252945;
+  --clr-invoice-table-footer-bg: #0c0e16;
+  --clr-selectlist-bg: #252945;
+  --clr-selectlist-shadow: rgba(0, 0, 0, 0.25);
+  --clr-selectlist-checkbox: #1e2139;
+  --clr-text-heading: #ffffff;
+  --clr-text-bodyA: #dfe3fa;
+  --clr-text-bodyB: #ffffff;
+  --clr-text-formLabel: #dfe3fa;
+  --clr-text-link: #ffffff;
+  --clr-text-linkHover: #888eb0;
+  --clr-text-placeholder: #ffffff;
+  --clr-tag-green-text: #33d69f;
+  --clr-tag-green-bg: #1f2c3f;
+  --clr-tag-orange-text: #ff8f00;
+  --clr-tag-orange-bg: #2b2736;
+  --clr-tag-gray-text: #dfe3fa;
+  --clr-tag-gray-bg: #292c45;
+}
+
+:root[data-theme=light] {
+  --clr-body-bg: #f8f8fb;
+  --clr-body-sidebar: #373b53;
+  --clr-body-main: #7c5dfa;
+  --clr-body-icon: url(../../../assets/icon-moon.svg);
+  --clr-form-bg: #ffffff;
+  --clr-form-fieldBg: #ffffff;
+  --clr-form-fieldBorder: #dfe3fa;
+  --clr-btn-one-bg: #f9fafe;
+  --clr-btn-one-text: #7e88c3;
+  --clr-btn-one-hover: #dfe3fa;
+  --clr-btn-two-bg: #ec5757;
+  --clr-btn-two-text: #ffffff;
+  --clr-btn-two-hover: #ff9797;
+  --clr-invoice-item-bg: #ffffff;
+  --clr-invoice-status-bg: #373b530f;
+  --clr-invoice-status-text: #888eb0;
+  --clr-invoice-price-text: #000000;
+  --clr-invoice-id-hash: #7e88c3;
+  --clr-invoice-table-bg: #f9fafe;
+  --clr-invoice-table-footer-bg: #373b53;
+  --clr-selectlist-bg: #ffffff;
+  --clr-selectlist-shadow: rgba(72, 84, 159, 0.25);
+  --clr-selectlist-checkbox: #dfe3fa;
+  --clr-text-heading: #0c0e16;
+  --clr-text-bodyA: #888eb0;
+  --clr-text-bodyB: #858bb2;
+  --clr-text-formLabel: #7e88c3;
+  --clr-text-link: #0c0e16;
+  --clr-text-linkHover: #7e88c3;
+  --clr-text-placeholder: rgba(12, 14, 22, 0.4);
+  --clr-tag-green-text: #33d69f;
+  --clr-tag-green-bg: #f3fdf9;
+  --clr-tag-orange-text: #ff8f00;
+  --clr-tag-orange-bg: #fff8f0;
+  --clr-tag-gray-text: #dfe3fa;
+  --clr-tag-gray-bg: #f3f3f5;
+}
+
+:root {
+  --ff-main: "Spartan", sans-serif;
+  --fw-regular: 400;
+  --fw-bold: 700;
+}
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role=list],
+ol[role=list] {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations and transitions for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+*::before,
+*::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+  padding-top: 4em;
+  background: var(--clr-body-bg);
+  color: var(--clr-text-placeholder);
+  font-family: var(--ff-main);
+  display: flex;
+  justify-content: center;
+}
+
+.main {
+  display: none;
+  width: 800px;
+}
+.main.active {
+  display: block;
+}
+
+.details {
+  display: none;
+  width: 600px;
+}
+.details.active {
+  display: block;
+}
+
+.header {
+  background: var(--clr-body-sidebar);
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2em;
+  border-top-right-radius: 1.2em;
+  border-bottom-right-radius: 1.2em;
+  overflow: hidden;
+}
+.header__theme {
+  background: center/cover no-repeat var(--clr-body-icon) transparent;
+  width: 20px;
+  height: 20px;
+  border: 0;
+  cursor: pointer;
+}
+.header__logo {
+  width: 40px;
+}
+.header::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 7%;
+  top: 0;
+  z-index: -1;
+  background: var(--clr-body-main);
+}
+.header::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 5%;
+  top: 5%;
+  z-index: -1;
+  background: #9277ff;
+  border-top-left-radius: 1em;
+  border-bottom-right-radius: 1em;
+}
+
+.main-header {
+  display: flex;
+  align-items: center;
+  gap: 3em;
+  margin-bottom: 4em;
+}
+.main-header__text {
+  margin-right: auto;
+}
+.main-header__text h1 {
+  color: var(--clr-text-heading);
+}
+.main-header__text p {
+  color: var(--clr-text-bodyA);
+  font-size: 0.75rem;
+}
+
+.invoices {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+.invoice {
+  font-size: 0.75rem;
+  background: var(--clr-invoice-item-bg);
+  padding: 1rem;
+  border-radius: 0.5em;
+  display: flex;
+  align-items: center;
+  gap: 2em;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: border 170ms ease-in-out;
+}
+.invoice:hover {
+  border-color: var(--clr-body-main);
+}
+.invoice__id {
+  font-weight: var(--fw-bold);
+  color: var(--clr-invoice-price-text);
+}
+.invoice__id span {
+  color: var(--clr-invoice-id-hash);
+}
+.invoice__date {
+  color: var(--clr-invoice-status-text);
+}
+.invoice__name {
+  color: var(--clr-invoice-status-text);
+}
+.invoice__price {
+  color: var(--clr-invoice-price-text);
+  font-size: 1rem;
+  font-weight: var(--fw-bold);
+  margin-left: auto;
+}
+
+.details-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.5em;
+  border-radius: 0.5em;
+  background-color: var(--clr-invoice-item-bg);
+  margin-bottom: 2em;
+}
+.details-header__status {
+  display: flex;
+  align-items: center;
+  font-size: 0.8rem;
+  gap: 1em;
+}
+.details-header__status-text {
+  color: var(--clr-invoice-status-text);
+}
+.details-header__buttons {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+}
+
+.details-body {
+  padding: 1.5em;
+  border-radius: 0.5em;
+  background-color: var(--clr-invoice-item-bg);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 0.5fr 1fr 1fr;
+  gap: 1.5em;
+  font-size: 0.8rem;
+}
+.details-body__id-text {
+  text-transform: capitalize;
+  color: var(--clr-invoice-status-text);
+}
+.details-body__address {
+  color: var(--clr-invoice-status-text);
+  text-transform: capitalize;
+  grid-column: 3/4;
+  text-align: right;
+}
+.details-body__dates {
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+}
+.details-body .date__title {
+  color: var(--clr-invoice-status-text);
+  text-transform: capitalize;
+}
+.details-body .date__day {
+  font-weight: var(--fw-bold);
+  text-transform: capitalize;
+}
+.details-body__bill {
+  color: var(--clr-invoice-status-text);
+}
+.details-body__bill-name {
+  color: #fff;
+  font-weight: var(--fw-bold);
+  text-transform: capitalize;
+  margin: 0.5em 0 0.35em 0;
+}
+.details-body__sent {
+  color: var(--clr-invoice-status-text);
+}
+.details-body__sent-mail {
+  color: #fff;
+  font-weight: var(--fw-bold);
+}
+.details-body__table {
+  background-color: var(--clr-invoice-table-bg);
+  width: 100%;
+  padding: var(--spacing);
+  border-radius: 0.35em 0.35em 0 0;
+}
+.details-body__table-wrap {
+  --spacing: 2em;
+  grid-column: 1/4;
+}
+.details-body__table-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--clr-invoice-table-footer-bg);
+  padding: var(--spacing);
+  border-radius: 0 0 0.35em 0.35em;
+  font-weight: var(--fw-bold);
+}
+.details-body__table th:last-of-type,
+.details-body__table td:last-of-type {
+  text-align: right;
+}
+.details-body__table th {
+  text-align: left;
+  color: var(--clr-invoice-status-text);
+  font-weight: var(--fw-regular);
+  font-size: 0.75rem;
+  padding-bottom: var(--spacing);
+}
+.details-body__table tbody td {
+  font-weight: var(--fw-bold);
+}
+
+.form {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 6.5em;
+  width: 650px;
+  padding: 4em 2em;
+  border-radius: 0 2em 2em 0;
+  background-color: var(--clr-form-bg);
+  z-index: 100;
+}
+.form__title {
+  padding-left: 2rem;
+  margin-bottom: 1.5em;
+}
+.form__section-title {
+  color: var(--clr-body-main);
+  font-size: 0.8rem;
+  margin-bottom: 1em;
+  text-transform: capitalize;
+}
+.form__body {
+  overflow-y: scroll;
+  height: 85%;
+  padding: 0 2em;
+  margin-bottom: 2em;
+}
+.form__billfrom-wrapper {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1em;
+  margin-bottom: 3em;
+}
+.form__billfrom-wrapper .input:first-child {
+  grid-column: 1/4;
+}
+.form__billto-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5em;
+  margin-bottom: 3em;
+}
+.form__billto-wrapper .input:nth-child(1),
+.form__billto-wrapper .input:nth-child(2),
+.form__billto-wrapper .input:nth-child(3),
+.form__billto-wrapper .input:nth-child(7),
+.form__billto-wrapper .flex {
+  grid-column: 1/-1;
+}
+.form__billto-wrapper .flex {
+  display: flex;
+  justify-content: space-between;
+  gap: 1.5em;
+}
+.form .items {
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+}
+.form .items .item {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+}
+.form .input__label {
+  display: block;
+  color: var(--clr-invoice-status-text);
+  font-size: 0.8rem;
+  text-transform: capitalize;
+  margin-bottom: 0.5em;
+}
+.form .input__field {
+  width: 100%;
+  padding: 0.75em 1em;
+  background: var(--clr-form-fieldBg);
+  outline: 0;
+  border: 1px solid var(--clr-form-fieldBorder);
+  border-radius: 0.35em;
+  color: #fff;
+  font-size: 0.8rem;
+  font-weight: var(--fw-bold);
+  border: 1px solid transparent;
+  transition: border-color 170ms ease-in-out;
+}
+.form .input__field:focus {
+  border-color: var(--clr-body-main);
+}
+.form__footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2em;
+}
+
+.selectlist {
+  position: relative;
+}
+.selectlist__toggle {
+  font-size: 0.75rem;
+  font-weight: var(--fw-bold);
+  cursor: pointer;
+  position: relative;
+}
+.selectlist__toggle::after {
+  position: absolute;
+  content: url("../../assets/icon-arrow-down.svg");
+  right: -2em;
+}
+.selectlist__options {
+  display: none;
+  position: absolute;
+  top: 200%;
+  left: 50%;
+  width: 200px;
+  transform: translateX(-40%);
+  background-color: var(--clr-selectlist-bg);
+  list-style: none;
+  margin: 0;
+  padding: 1em;
+  border-radius: 0.5em;
+  box-shadow: 0 0 0.5em 0 var(--clr-selectlist-shadow);
+}
+.selectlist__options.active {
+  display: block;
+}
+.selectlist__options li {
+  padding: 0.5em 0;
+  font-size: 0.75rem;
+  font-weight: var(--fw-bold);
+  display: flex;
+  gap: 1em;
+  align-items: center;
+  cursor: pointer;
+}
+.selectlist__options li:hover .selectlist__option-checkbox {
+  border: 1px solid var(--clr-body-main);
+}
+.selectlist__options li.checked .selectlist__option-checkbox {
+  background: var(--clr-body-main);
+  position: relative;
+}
+.selectlist__options li.checked .selectlist__option-checkbox:hover {
+  border: none;
+}
+.selectlist__options li.checked .selectlist__option-checkbox::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: center no-repeat url(../../assets/icon-check.svg);
+}
+.selectlist__option-checkbox {
+  width: 15px;
+  height: 15px;
+  background: var(--clr-selectlist-checkbox);
+  border-radius: 0.1em;
+}
+
+.btn {
+  display: inline-block;
+  border: 0;
+  background: none;
+  color: inherit;
+  font-size: 0.8rem;
+  font-weight: var(--fw-bold);
+  padding: 0.85em 1.25em;
+  border-radius: 2em;
+  cursor: pointer;
+  transition: background-color 170ms ease-in-out;
+}
+.btn.btn-primary {
+  background-color: var(--clr-body-main);
+}
+.btn.btn-info {
+  background-color: var(--clr-btn-one-bg);
+  color: var(--clr-btn-one-text);
+}
+.btn.btn-info:hover {
+  background-color: var(--clr-btn-one-hover);
+}
+.btn.btn-danger {
+  background-color: var(--clr-btn-two-bg);
+  color: var(--clr-btn-two-text);
+}
+.btn.btn-danger:hover {
+  background-color: var(--clr-btn-two-hover);
+}
+.btn.btn-add {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+}
+.btn.btn-add::before {
+  content: "";
+  background: center no-repeat url("../../assets/icon-plus.svg") #fff;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+}
+.btn.btn-back {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+}
+.btn.btn-back::before {
+  content: "";
+  background: center/contain no-repeat url("../../assets/icon-arrow-left.svg");
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+.btn.btn-delete {
+  padding: 0;
+}
+
+.tag {
+  padding: 1em;
+  width: 110px;
+  border-radius: 0.5em;
+  font-weight: var(--fw-bold);
+  text-align: center;
+  gap: 0.5em;
+  position: relative;
+  text-transform: capitalize;
+}
+.tag::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 10%;
+  transform: translateY(-50%);
+  background-color: currentColor;
+}
+.tag.tag-paid {
+  color: var(--clr-tag-green-text);
+  background-color: var(--clr-tag-green-bg);
+}
+.tag.tag-pending {
+  color: var(--clr-tag-orange-text);
+  background-color: var(--clr-tag-orange-bg);
+}
+.tag.tag-draft {
+  color: var(--clr-tag-gray-text);
+  background-color: var(--clr-tag-gray-bg);
+}

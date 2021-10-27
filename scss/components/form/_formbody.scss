@@ -1,0 +1,110 @@
+.form {
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 6.5em;
+	width: 650px;
+	padding: 4em 2em;
+	border-radius: 0 2em 2em 0;
+	background-color: var(--clr-form-bg);
+	z-index: 100;
+
+	&__title {
+		padding-left: 2rem;
+		margin-bottom: 1.5em;
+	}
+
+	&__section-title {
+		color: var(--clr-body-main);
+		font-size: 0.8rem;
+		margin-bottom: 1em;
+		text-transform: capitalize;
+	}
+
+	&__body {
+		overflow-y: scroll;
+		height: 85%;
+		padding: 0 2em;
+		margin-bottom: 2em;
+	}
+
+	&__billfrom-wrapper {
+		display: grid;
+		grid-template-rows: 1fr 1fr;
+		grid-template-columns: 1fr 1fr 1fr;
+		gap: 1em;
+		margin-bottom: 3em;
+
+		.input:first-child {
+			grid-column: 1 / 4;
+		}
+	}
+
+	&__billto-wrapper {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 1.5em;
+		margin-bottom: 3em;
+
+		.input:nth-child(1),
+		.input:nth-child(2),
+		.input:nth-child(3),
+		.input:nth-child(7),
+		.flex {
+			grid-column: 1 / -1;
+		}
+
+		.flex {
+			display: flex;
+			justify-content: space-between;
+			gap: 1.5em;
+		}
+	}
+
+	.items {
+		display: flex;
+		flex-direction: column;
+		gap: 2em;
+
+		.item {
+			display: flex;
+			align-items: center;
+			gap: 1em;
+		}
+	}
+
+	.input {
+		&__label {
+			display: block;
+			color: var(--clr-invoice-status-text);
+			font-size: 0.8rem;
+			text-transform: capitalize;
+			margin-bottom: 0.5em;
+		}
+
+		&__field {
+			width: 100%;
+			padding: 0.75em 1em;
+			background: var(--clr-form-fieldBg);
+			outline: 0;
+			border: 1px solid var(--clr-form-fieldBorder);
+			border-radius: 0.35em;
+			color: #fff;
+			font-size: 0.8rem;
+			font-weight: var(--fw-bold);
+			border: 1px solid transparent;
+			transition: border-color 170ms ease-in-out;
+
+			&:focus {
+				border-color: var(--clr-body-main);
+			}
+		}
+	}
+
+	&__footer {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding: 0 2em;
+	}
+}

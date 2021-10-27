@@ -1,0 +1,114 @@
+$colors-light: (
+	'body': (
+		bg: #f8f8fb,
+		sidebar: #373b53,
+		main: #7c5dfa,
+		icon: url(../../../assets/icon-moon.svg),
+	),
+	'form': (
+		bg: #ffffff,
+		fieldBg: #ffffff,
+		fieldBorder: #dfe3fa,
+	),
+	'btn': (
+		one-bg: #f9fafe,
+		one-text: #7e88c3,
+		one-hover: #dfe3fa,
+		two-bg: #ec5757,
+		two-text: #ffffff,
+		two-hover: #ff9797,
+	),
+	'invoice': (
+		item-bg: #ffffff,
+		status-bg: #373b530f,
+		status-text: #888eb0,
+		price-text: #000000,
+		id-hash: #7e88c3,
+		table-bg: #f9fafe,
+		table-footer-bg: #373b53,
+	),
+	'selectlist': (
+		bg: #ffffff,
+		shadow: rgba(72, 84, 159, 0.25),
+		checkbox: #dfe3fa,
+	),
+	'text': (
+		heading: #0c0e16,
+		bodyA: #888eb0,
+		bodyB: #858bb2,
+		formLabel: #7e88c3,
+		link: #0c0e16,
+		linkHover: #7e88c3,
+		placeholder: rgba(12, 14, 22, 0.4),
+	),
+	'tag': (
+		green-text: rgb(51, 214, 159),
+		green-bg: rgb(243, 253, 249),
+		orange-text: rgb(255, 143, 0),
+		orange-bg: rgb(255, 248, 240),
+		gray-text: rgb(223, 227, 250),
+		gray-bg: rgb(243, 243, 245),
+	),
+);
+
+$colors-dark: (
+	'body': (
+		bg: #141625,
+		sidebar: #1e2139,
+		main: #7c5dfa,
+		icon: url(../../../assets/icon-sun.svg),
+	),
+	'form': (
+		bg: #141625,
+		fieldBg: #1e2139,
+		fieldBorder: #252945,
+	),
+	'btn': (
+		one-bg: #252945,
+		one-text: #dfe3fa,
+		one-hover: #ffffff,
+		two-bg: #ec5757,
+		two-text: #ffffff,
+		two-hover: #ff9797,
+	),
+	'invoice': (
+		item-bg: #1e2139,
+		status-bg: #dfe3fa0f,
+		status-text: #dfe3fa,
+		price-text: #ffffff,
+		id-hash: #7e88c3,
+		table-bg: #252945,
+		table-footer-bg: #0c0e16,
+	),
+	'selectlist': (
+		bg: #252945,
+		shadow: rgba(0, 0, 0, 0.25),
+		checkbox: #1e2139,
+	),
+	'text': (
+		heading: #ffffff,
+		bodyA: #dfe3fa,
+		bodyB: #ffffff,
+		formLabel: #dfe3fa,
+		link: #ffffff,
+		linkHover: #888eb0,
+		placeholder: #ffffff,
+	),
+	'tag': (
+		green-text: rgb(51, 214, 159),
+		green-bg: rgb(31, 44, 63),
+		orange-text: rgb(255, 143, 0),
+		orange-bg: rgb(43, 39, 54),
+		gray-text: rgb(223, 227, 250),
+		gray-bg: rgb(41, 44, 69),
+	),
+);
+
+$font-families: (
+	main: 'Spartan',
+);
+
+$font-weights: (
+	regular: 400,
+	bold: 700,
+);

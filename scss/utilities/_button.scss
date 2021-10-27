@@ -1,0 +1,67 @@
+.btn {
+	display: inline-block;
+	border: 0;
+	background: none;
+	color: inherit;
+	font-size: 0.8rem;
+	font-weight: var(--fw-bold);
+	padding: 0.85em 1.25em;
+	border-radius: 2em;
+	cursor: pointer;
+	transition: background-color 170ms ease-in-out;
+
+	&.btn-primary {
+		background-color: var(--clr-body-main);
+	}
+
+	&.btn-info {
+		background-color: var(--clr-btn-one-bg);
+		color: var(--clr-btn-one-text);
+
+		&:hover {
+			background-color: var(--clr-btn-one-hover);
+		}
+	}
+
+	&.btn-danger {
+		background-color: var(--clr-btn-two-bg);
+		color: var(--clr-btn-two-text);
+
+		&:hover {
+			background-color: var(--clr-btn-two-hover);
+		}
+	}
+
+	&.btn-add {
+		display: flex;
+		align-items: center;
+		gap: 1em;
+
+		&::before {
+			content: '';
+			background: center no-repeat url('../../assets/icon-plus.svg') #fff;
+			width: 25px;
+			height: 25px;
+			border-radius: 50%;
+		}
+	}
+
+	&.btn-back {
+		display: flex;
+		align-items: center;
+		gap: 1em;
+
+		&::before {
+			content: '';
+			background: center/contain no-repeat
+				url('../../assets/icon-arrow-left.svg');
+			width: 10px;
+			height: 10px;
+			border-radius: 50%;
+		}
+	}
+
+	&.btn-delete {
+		padding: 0;
+	}
+}

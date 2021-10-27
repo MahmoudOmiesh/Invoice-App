@@ -1,0 +1,29 @@
+body {
+	min-height: 100vh;
+	text-rendering: optimizeSpeed;
+	line-height: 1.5;
+	padding-top: 4em;
+	background: var(--clr-body-bg);
+	color: var(--clr-text-placeholder);
+	font-family: var(--ff-main);
+	display: flex;
+	justify-content: center;
+}
+
+.main {
+	display: none;
+	width: 800px;
+
+	&.active {
+		display: block;
+	}
+}
+
+.details {
+	display: none;
+	width: 600px;
+
+	&.active {
+		display: block;
+	}
+}

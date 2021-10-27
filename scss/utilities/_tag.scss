@@ -1,0 +1,35 @@
+.tag {
+	padding: 1em;
+	width: 110px;
+	border-radius: 0.5em;
+	font-weight: var(--fw-bold);
+	text-align: center;
+	gap: 0.5em;
+	position: relative;
+	text-transform: capitalize;
+
+	&::before {
+		content: '';
+		width: 8px;
+		height: 8px;
+		border-radius: 50%;
+		position: absolute;
+		top: 50%;
+		left: 10%;
+		transform: translateY(-50%);
+		background-color: currentColor;
+	}
+
+	&.tag-paid {
+		color: var(--clr-tag-green-text);
+		background-color: var(--clr-tag-green-bg);
+	}
+	&.tag-pending {
+		color: var(--clr-tag-orange-text);
+		background-color: var(--clr-tag-orange-bg);
+	}
+	&.tag-draft {
+		color: var(--clr-tag-gray-text);
+		background-color: var(--clr-tag-gray-bg);
+	}
+}

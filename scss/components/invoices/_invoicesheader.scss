@@ -1,0 +1,19 @@
+.main-header {
+	display: flex;
+	align-items: center;
+	gap: 3em;
+	margin-bottom: 4em;
+
+	&__text {
+		margin-right: auto;
+
+		h1 {
+			color: var(--clr-text-heading);
+		}
+
+		p {
+			color: var(--clr-text-bodyA);
+			font-size: 0.75rem;
+		}
+	}
+}

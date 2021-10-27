@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Spartan:wght@400;700&display=swap"
+			rel="stylesheet"
+		/>
+		<link rel="stylesheet" href="css/style.css" />
+		<script src="js/main.js" type="module"></script>
+		<title>Invoice App</title>
+	</head>
+	<body>
+		<header class="header">
+			<img src="assets/logo.svg" alt="Logo" class="header__logo" />
+			<button class="header__theme"></button>
+		</header>
+
+		<main class="main active">
+			<div class="main-header">
+				<div class="main-header__text">
+					<h1>Invoices</h1>
+					<p>There are <span></span> total invoices.</p>
+				</div>
+				<div class="selectlist">
+					<p class="selectlist__toggle">Filter by status</p>
+					<ul class="selectlist__options">
+						<li class="selectlist__option">
+							<span class="selectlist__option-checkbox"></span>
+							<span class="selectlist__option-text">Paid</span>
+						</li>
+						<li class="selectlist__option">
+							<span class="selectlist__option-checkbox"></span>
+							<span class="selectlist__option-text">Pending</span>
+						</li>
+						<li class="selectlist__option">
+							<span class="selectlist__option-checkbox"></span>
+							<span class="selectlist__option-text">Draft</span>
+						</li>
+					</ul>
+				</div>
+				<button class="btn btn-primary btn-add" data-add-invoice>
+					New Invoice
+				</button>
+			</div>
+
+			<div class="invoices"></div>
+		</main>
+	</body>
+</html>

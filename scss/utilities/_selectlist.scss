@@ -1,0 +1,75 @@
+.selectlist {
+	position: relative;
+
+	&__toggle {
+		font-size: 0.75rem;
+		font-weight: var(--fw-bold);
+		cursor: pointer;
+		position: relative;
+
+		&::after {
+			position: absolute;
+			content: url('../../assets/icon-arrow-down.svg');
+			right: -2em;
+		}
+	}
+
+	&__options {
+		display: none;
+		position: absolute;
+		top: 200%;
+		left: 50%;
+		width: 200px;
+		transform: translateX(-40%);
+		background-color: var(--clr-selectlist-bg);
+		list-style: none;
+		margin: 0;
+		padding: 1em;
+		border-radius: 0.5em;
+		box-shadow: 0 0 0.5em 0 var(--clr-selectlist-shadow);
+
+		&.active {
+			display: block;
+		}
+
+		li {
+			padding: 0.5em 0;
+			font-size: 0.75rem;
+			font-weight: var(--fw-bold);
+			display: flex;
+			gap: 1em;
+			align-items: center;
+			cursor: pointer;
+
+			&:hover .selectlist__option-checkbox {
+				border: 1px solid var(--clr-body-main);
+			}
+
+			&.checked .selectlist__option-checkbox {
+				background: var(--clr-body-main);
+				position: relative;
+
+				&:hover {
+					border: none;
+				}
+
+				&::after {
+					content: '';
+					position: absolute;
+					left: 0;
+					top: 0;
+					width: 100%;
+					height: 100%;
+					background: center no-repeat url(../../assets/icon-check.svg);
+				}
+			}
+		}
+	}
+
+	&__option-checkbox {
+		width: 15px;
+		height: 15px;
+		background: var(--clr-selectlist-checkbox);
+		border-radius: 0.1em;
+	}
+}

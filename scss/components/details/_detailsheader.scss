@@ -1,0 +1,26 @@
+.details-header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 1.5em;
+	border-radius: 0.5em;
+	background-color: var(--clr-invoice-item-bg);
+	margin-bottom: 2em;
+
+	&__status {
+		display: flex;
+		align-items: center;
+		font-size: 0.8rem;
+		gap: 1em;
+
+		&-text {
+			color: var(--clr-invoice-status-text);
+		}
+	}
+
+	&__buttons {
+		display: flex;
+		align-items: center;
+		gap: 0.5em;
+	}
+}

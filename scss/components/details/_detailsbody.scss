@@ -1,0 +1,103 @@
+.details-body {
+	padding: 1.5em;
+	border-radius: 0.5em;
+	background-color: var(--clr-invoice-item-bg);
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-template-rows: 0.5fr 1fr 1fr;
+	gap: 1.5em;
+	font-size: 0.8rem;
+
+	&__id {
+		&-text {
+			text-transform: capitalize;
+			color: var(--clr-invoice-status-text);
+		}
+	}
+
+	&__address {
+		color: var(--clr-invoice-status-text);
+		text-transform: capitalize;
+		grid-column: 3 / 4;
+		text-align: right;
+	}
+
+	&__dates {
+		display: flex;
+		flex-direction: column;
+		gap: 2em;
+	}
+
+	.date {
+		&__title {
+			color: var(--clr-invoice-status-text);
+			text-transform: capitalize;
+		}
+
+		&__day {
+			font-weight: var(--fw-bold);
+			text-transform: capitalize;
+		}
+	}
+
+	&__bill {
+		color: var(--clr-invoice-status-text);
+
+		&-name {
+			color: #fff;
+			font-weight: var(--fw-bold);
+			// font-size: 1.1rem;
+			text-transform: capitalize;
+			margin: 0.5em 0 0.35em 0;
+		}
+	}
+
+	&__sent {
+		color: var(--clr-invoice-status-text);
+
+		&-mail {
+			color: #fff;
+			font-weight: var(--fw-bold);
+			// font-size: 1.1rem;
+		}
+	}
+
+	&__table {
+		&-wrap {
+			--spacing: 2em;
+			grid-column: 1 / 4;
+		}
+
+		&-footer {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			background-color: var(--clr-invoice-table-footer-bg);
+			padding: var(--spacing);
+			border-radius: 0 0 0.35em 0.35em;
+			font-weight: var(--fw-bold);
+		}
+
+		background-color: var(--clr-invoice-table-bg);
+		width: 100%;
+		padding: var(--spacing);
+		border-radius: 0.35em 0.35em 0 0;
+
+		th:last-of-type,
+		td:last-of-type {
+			text-align: right;
+		}
+
+		th {
+			text-align: left;
+			color: var(--clr-invoice-status-text);
+			font-weight: var(--fw-regular);
+			font-size: 0.75rem;
+			padding-bottom: var(--spacing);
+		}
+
+		tbody td {
+			font-weight: var(--fw-bold);
+		}
+	}
+}

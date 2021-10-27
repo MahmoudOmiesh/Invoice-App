@@ -1,0 +1,22 @@
+:root[data-theme='dark'] {
+	@each $type, $shades in $colors-dark {
+		@each $intensity, $color in $shades {
+			--clr-#{$type}-#{$intensity}: #{$color};
+		}
+	}
+}
+:root[data-theme='light'] {
+	@each $type, $shades in $colors-light {
+		@each $intensity, $color in $shades {
+			--clr-#{$type}-#{$intensity}: #{$color};
+		}
+	}
+}
+:root {
+	@each $family, $name in $font-families {
+		--ff-#{$family}: '#{$name}', sans-serif;
+	}
+	@each $value, $weight in $font-weights {
+		--fw-#{$value}: #{$weight};
+	}
+}
